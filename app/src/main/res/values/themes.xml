@@ -1,8 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.S8119575Assignment2" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!-- Colors -->
+        <item name="android:colorBackground">@color/colorBackground</item>
+
+        <!-- Default font -->
+        <item name="android:fontFamily">@font/dm_sans</item>
+        <item name="fontFamily">@font/dm_sans</item>
     </style>
 
     <style name="Theme.S8119575Assignment2" parent="Base.Theme.S8119575Assignment2" />
