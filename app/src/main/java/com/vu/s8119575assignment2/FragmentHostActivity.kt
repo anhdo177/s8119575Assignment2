@@ -15,7 +15,7 @@ import android.view.Menu
 import android.view.MenuItem
 import com.vu.s8119575assignment2.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class FragmentHostActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
