@@ -3,26 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/LoginScreenFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.vu.s8119575assignment2.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:id="@+id/LoginScreenFragment"
+        android:name="com.vu.s8119575assignment2.ui.LoginScreenFragment"
+        android:label="@string/loginScreen_fragment_label"
+        tools:layout="@layout/fragment_login_screen">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_LoginScreenFragment_to_DashboardScreenFragment"
+            app:destination="@id/DashboardScreenFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.vu.s8119575assignment2.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/DashboardScreenFragment"
+        android:name="com.vu.s8119575assignment2.ui.DashboardScreenFragment"
+        android:label="@string/dashboardScreen_fragment_label"
+        tools:layout="@layout/fragment_dashboard_screen">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_DashboardScreenFragment_to_DetailsScreenFragment"
+            app:destination="@id/DetailsScreenFragment" />
+    </fragment>
+
+    <fragment
+    android:id="@+id/DetailsScreenFragment"
+    android:name="com.vu.s8119575assignment2.ui.DetailsScreenFragment"
+    android:label="@string/detailsScreen_fragment_label"
+    tools:layout="@layout/fragment_details_screen">
     </fragment>
 </navigation>
