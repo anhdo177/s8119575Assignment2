@@ -8,7 +8,7 @@ import retrofit2.http.POST
 
 interface AssignmentApi {
     @POST("footscray/auth")
-    suspend fun Login(
+    suspend fun login(
         @Body request: LoginRequest
     ): Response<LoginResponse>
 }
