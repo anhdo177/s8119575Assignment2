@@ -1,4 +1,4 @@
-package com.vu.s8119575assignment2.ui
+package com.vu.s8119575assignment2.ui.login
 
 import android.os.Bundle
 import android.view.LayoutInflater

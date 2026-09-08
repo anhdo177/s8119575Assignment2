@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/LoginScreenFragment"
-        android:name="com.vu.s8119575assignment2.ui.LoginScreenFragment"
+        android:name="com.vu.s8119575assignment2.ui.login.LoginScreenFragment"
         android:label="@string/loginScreen_fragment_label"
         tools:layout="@layout/fragment_login_screen">
 
