@@ -7,6 +7,7 @@ import jakarta.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import java.io.IOException
+import android.util.Log
 
 @HiltViewModel
 class LoginViewModel @Inject constructor (private val loginRepository: LoginRepository): ViewModel() {
@@ -28,14 +29,24 @@ class LoginViewModel @Inject constructor (private val loginRepository: LoginRepo
             val response = loginRepository.login(username, password)
 
             if (response.isSuccessful) {
+
                 val receivedKeypass = response.body()?.keypass
+
                 if (receivedKeypass.isNullOrBlank()) {
+
                     errorMessageFlow.value = "Invalid server response."
+
                 } else keypassFlow.value = receivedKeypass
+
             } else errorMessageFlow.value = "Login failed. Check your details and try again."
+
         } catch (exception: IOException) {
-            errorMessageFlow.value =
-                "Unable to connect. Check your internet and try again."
+
+            errorMessageFlow.value = "Unable to connect. Check your internet and try again."
         }
+    }
+
+    fun clearKeypass() {
+        keypassFlow.value = null
     }
 }

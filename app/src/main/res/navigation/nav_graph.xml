@@ -24,6 +24,10 @@
         <action
             android:id="@+id/action_DashboardScreenFragment_to_DetailsScreenFragment"
             app:destination="@id/DetailsScreenFragment" />
+
+        <argument
+            android:name="keypass"
+            app:argType="string" />
     </fragment>
 
     <fragment

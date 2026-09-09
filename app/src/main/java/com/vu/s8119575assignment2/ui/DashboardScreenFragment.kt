@@ -7,8 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.vu.s8119575assignment2.R
+import androidx.navigation.fragment.navArgs
 
 class DashboardScreenFragment : Fragment() {
+
+    private val args: DashboardScreenFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
