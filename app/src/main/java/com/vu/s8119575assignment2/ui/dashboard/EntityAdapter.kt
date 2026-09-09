@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.vu.s8119575assignment2.network.data.dashboard.Entity
 
-class EntityAdapter (private val dataList: MutableList<Entity> = mutableListOf<Entity>()): RecyclerView.Adapter<EntityListItemViewHolder>() {
+class EntityAdapter (private val dataList: MutableList<Entity> = mutableListOf<Entity>(), val onClickFunction: (Entity) -> Unit): RecyclerView.Adapter<EntityListItemViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EntityListItemViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(
@@ -17,7 +17,7 @@ class EntityAdapter (private val dataList: MutableList<Entity> = mutableListOf<E
     }
 
     override fun onBindViewHolder(holder: EntityListItemViewHolder, position: Int) {
-        holder.bind(dataList[position])
+        holder.bind(dataList[position], onClickFunction)
     }
 
     override fun getItemCount() = dataList.size
@@ -27,6 +27,4 @@ class EntityAdapter (private val dataList: MutableList<Entity> = mutableListOf<E
         dataList.addAll(entityListData)
         notifyDataSetChanged()
     }
-
-
 }

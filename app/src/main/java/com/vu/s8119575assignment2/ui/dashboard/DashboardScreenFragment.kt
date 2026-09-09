@@ -17,6 +17,7 @@ import kotlinx.coroutines.launch
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 
 @AndroidEntryPoint
 class DashboardScreenFragment : Fragment() {
@@ -24,7 +25,12 @@ class DashboardScreenFragment : Fragment() {
     private val viewModel: DashboardViewModel by viewModels()
     private val args: DashboardScreenFragmentArgs by navArgs()
 
-    private val entityAdapter = EntityAdapter()
+    private val entityAdapter = EntityAdapter { entity ->
+        val action = DashboardScreenFragmentDirections
+            .actionDashboardScreenFragmentToDetailsScreenFragment(entity)
+
+        findNavController().navigate(action)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

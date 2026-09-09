@@ -35,5 +35,9 @@
     android:name="com.vu.s8119575assignment2.ui.DetailsScreenFragment"
     android:label="@string/detailsScreen_fragment_label"
     tools:layout="@layout/fragment_details_screen">
+
+        <argument
+            android:name="entity"
+            app:argType="com.vu.s8119575assignment2.network.data.dashboard.Entity" />
     </fragment>
 </navigation>
