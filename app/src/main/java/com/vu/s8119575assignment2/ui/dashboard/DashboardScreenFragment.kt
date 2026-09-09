@@ -11,13 +11,20 @@ import com.vu.s8119575assignment2.ui.dashboard.DashboardScreenFragmentArgs
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.lifecycle.Lifecycle
 import kotlinx.coroutines.launch
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
+import android.widget.Toast
 
 @AndroidEntryPoint
 class DashboardScreenFragment : Fragment() {
 
     private val viewModel: DashboardViewModel by viewModels()
     private val args: DashboardScreenFragmentArgs by navArgs()
+
+    private val entityAdapter = EntityAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,8 +41,36 @@ class DashboardScreenFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val entityRecyclerView = view.findViewById<RecyclerView>(R.id.entityRecyclerView)
+
+        entityRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        entityRecyclerView.adapter = entityAdapter
+
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.getDashboardData(args.keypass)
+        }
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+
+                launch {
+                    viewModel.entities.collect { entities ->
+                        entityAdapter.updateData(entities)
+                    }
+                }
+
+                launch {
+                    viewModel.errorMessage.collect { message ->
+                        if (message != null) {
+                            Toast.makeText(
+                                requireContext(),
+                                message,
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+                    }
+                }
+            }
         }
     }
 }
