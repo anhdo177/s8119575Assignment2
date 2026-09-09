@@ -1,13 +1,12 @@
 package com.vu.s8119575assignment2.ui
 
 import androidx.lifecycle.ViewModel
-import com.vu.s8119575assignment2.network.data.LoginRepository
+import com.vu.s8119575assignment2.network.data.login.LoginRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jakarta.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import java.io.IOException
-import android.util.Log
 
 @HiltViewModel
 class LoginViewModel @Inject constructor (private val loginRepository: LoginRepository): ViewModel() {

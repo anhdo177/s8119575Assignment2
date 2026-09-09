@@ -1,4 +1,4 @@
-package com.vu.s8119575assignment2.network.data
+package com.vu.s8119575assignment2.network.data.login
 
 import com.vu.s8119575assignment2.network.services.AssignmentApi
 import jakarta.inject.Inject
