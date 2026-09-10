@@ -18,6 +18,7 @@ class DashboardViewModel @Inject constructor (private val dashboardRepository: D
     private val errorMessageFlow = MutableStateFlow<String?>(null)
     val errorMessage: StateFlow<String?> = errorMessageFlow
 
+
     suspend fun getDashboardData(keypass: String) {
         errorMessageFlow.value = null
 

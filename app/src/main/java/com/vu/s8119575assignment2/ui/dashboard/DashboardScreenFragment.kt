@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.vu.s8119575assignment2.R
-import com.vu.s8119575assignment2.ui.dashboard.DashboardScreenFragmentArgs
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.lifecycle.lifecycleScope

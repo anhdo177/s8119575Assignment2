@@ -23,6 +23,7 @@ class LoginViewModel @Inject constructor (private val loginRepository: LoginRepo
 
         if (username.isBlank() || password.isBlank()) {
             errorMessageFlow.value = "Please enter your student ID and password."
+            return
         }
         try {
             val response = loginRepository.login(username, password)
