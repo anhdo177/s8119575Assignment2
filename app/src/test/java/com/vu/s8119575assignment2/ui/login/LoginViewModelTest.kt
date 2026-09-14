@@ -6,7 +6,7 @@ import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
-import com.vu.s8119575assignment2.ui.LoginViewModel
+import com.vu.s8119575assignment2.ui.login.LoginViewModel
 import com.vu.s8119575assignment2.network.data.login.LoginResponse
 import io.mockk.coEvery
 import retrofit2.Response
