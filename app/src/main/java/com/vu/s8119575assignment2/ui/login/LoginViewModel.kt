@@ -1,4 +1,4 @@
-package com.vu.s8119575assignment2.ui
+package com.vu.s8119575assignment2.ui.login
 
 import androidx.lifecycle.ViewModel
 import com.vu.s8119575assignment2.network.data.login.LoginRepository

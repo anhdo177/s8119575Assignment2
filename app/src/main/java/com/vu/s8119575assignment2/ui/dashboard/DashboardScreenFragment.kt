@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import android.widget.ProgressBar
 
 @AndroidEntryPoint
 class DashboardScreenFragment : Fragment() {
@@ -48,11 +49,19 @@ class DashboardScreenFragment : Fragment() {
 
         val entityRecyclerView = view.findViewById<RecyclerView>(R.id.entityRecyclerView)
 
+        val progressBar = view.findViewById<ProgressBar>(R.id.dashboardProgressBar)
+
         entityRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         entityRecyclerView.adapter = entityAdapter
 
         viewLifecycleOwner.lifecycleScope.launch {
+            progressBar.visibility = View.VISIBLE
+            entityRecyclerView.visibility = View.GONE
+
             viewModel.getDashboardData(args.keypass)
+
+            progressBar.visibility = View.GONE
+            entityRecyclerView.visibility = View.VISIBLE
         }
 
         viewLifecycleOwner.lifecycleScope.launch {

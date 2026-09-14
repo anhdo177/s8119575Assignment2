@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.vu.s8119575assignment2.R
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
-import com.vu.s8119575assignment2.ui.LoginViewModel
+import com.vu.s8119575assignment2.ui.login.LoginViewModel
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.coroutines.launch
